@@ -51,7 +51,7 @@ public class Menu {
 
                 }
             }else if(escolha == 2){// consultar estoque
-                ConsultaEstoque.consultaAluguelFunc(escolha, CDs, VHS);
+                ConsultaEstoque.consultaEstoqueFunc(escolha, Estoque);
             }else if(escolha == 3){
 
                 RegistroFuncionario.registroFuncionarioFunc(listaFuncionarios);
@@ -61,21 +61,21 @@ public class Menu {
                 ConsultaFuncionario.consultaFuncionarioFunc(listaFuncionarios);
 
             }else if(escolha == 5){ // REGISTRO DE CLIENTE ( EFETUAR ALUGUEL)
-                if(listasEstaoVazias(CDs, VHS)== true){ // verifica se existe estoque para registrar clientes
+                if(listaEstaVazia(Estoque)== true){ // verifica se existe estoque para registrar clientes
                     System.out.println("NÃO É POSSIVEL REGISTRAR CLIENTES POIS NÃO EXISTE FILMES EM ESTOQUE");
                 }else{
 
-                    RegistroCliente.registroClienteFunc(CDs, VHS, escolha, cadastroClientes);
+                    RegistroCliente.registroClienteFunc(Estoque, escolha, cadastroClientes);
 
                 }
                      
             }else if(escolha == 6){// CONSULTA DE ALUGUEIS
                 
-                ConsultaAluguel.consultaAluguelFunc(CDs, VHS, cadastroClientes);
+                ConsultaAluguel.consultaAluguelFunc(Estoque, cadastroClientes);
 
             }else if(escolha == 7){ // Apagar Clientes
 
-                DevolucaoAluguel.DevolucaoAluguelFunc(cadastroClientes, escolha, CDs, VHS, quantidadeDevolucao);
+                DevolucaoAluguel.DevolucaoAluguelFunc(cadastroClientes, escolha, Estoque, quantidadeDevolucao);
                 
             }else if(escolha == 0){ // Terminar Programa
                 scannerInteiro.close();
@@ -98,18 +98,16 @@ public class Menu {
         System.out.println("[4] COMEDIA");
     }
 
-    public static void consultaNomeEQnt(EstoqueLoja qualEstoque){
-        for(int x = 0; x < qualEstoque.getListaFilmes().size(); x++){
+    public static void consultaNomeEQnt(EstoqueLoja qualEstoque, int x){
             System.out.println("----------------------------------------------------------");
             System.out.println("Nome do filme: " + qualEstoque.getListaFilmes().get(x).getNome());
             System.out.println("Quantidade: " + qualEstoque.getListaFilmes().get(x).getQnt());
             System.out.println("Codigo do produto: " + qualEstoque.getListaFilmes().get(x).getCodigoProduto());
             System.out.println("----------------------------------------------------------");
-        }
     }
 
 
-    public static Boolean listasEstaVazia(EstoqueLoja x){
+    public static Boolean listaEstaVazia(EstoqueLoja x){
 
         if(x.getListaFilmes().isEmpty()){
             return true;

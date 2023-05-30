@@ -6,7 +6,7 @@ import Loja.Modelos.EstoqueLoja;
 
 public class ConsultaEstoque {
     static Scanner scannerInteiro = new Scanner(System.in);
-    public static void consultaAluguelFunc(int escolha, EstoqueLoja Estoque, EstoqueLoja VHS){
+    public static void consultaEstoqueFunc(int escolha, EstoqueLoja Estoque){
                 
 
                 System.out.println("QUAL ESTOQUE GOSTARIA DE CONSULTAR?");
@@ -20,30 +20,30 @@ public class ConsultaEstoque {
                     // Genero Terror
                     if(escolha == 1){
                         for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                            if(Estoque.getListaFilmes().get(x).getGenero() == "Terror"){
-                                Menu.consultaNomeEQnt(Estoque);
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Terror") && (Estoque.getListaFilmes().get(x).getTipo() == "CD")){
+                                Menu.consultaNomeEQnt(Estoque, x);
                             }
                         }
                         // Genero Acao
                     }else if(escolha == 2){
-                        if(CDs.getListaDeAcao().isEmpty()){
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntAcao(CDs);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Acao") && (Estoque.getListaFilmes().get(x).getTipo() == "CD")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                         // Genero Drama
                     }else if(escolha == 3){
-                        if(CDs.getListaDeDrama().isEmpty()){
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntDrama(CDs);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Drama") && (Estoque.getListaFilmes().get(x).getTipo() == "CD")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                         // Genero Comedia
                     }else if(escolha == 4){
-                        if(CDs.getListaDeComedia().isEmpty()){
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntComedia(CDs);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Comedia") && (Estoque.getListaFilmes().get(x).getTipo() == "CD")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                     }
                     // Consultar VHS 
@@ -51,31 +51,31 @@ public class ConsultaEstoque {
                     Menu.printGeneros();
                     escolha = scannerInteiro.nextInt();
                     if(escolha == 1){
-                        if(VHS.getListaDeTerror().isEmpty()) {
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntTerror(VHS);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Terror") && (Estoque.getListaFilmes().get(x).getTipo() == "VHS")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                         // Genero Acao
                     }else if(escolha == 2){
-                        if(VHS.getListaDeAcao().isEmpty()){
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntAcao(VHS);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Acao") && (Estoque.getListaFilmes().get(x).getTipo() == "VHS")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                         // Genero Drama
                     }else if(escolha == 3){
-                        if(VHS.getListaDeDrama().isEmpty()){
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntDrama(VHS);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Drama") && (Estoque.getListaFilmes().get(x).getTipo() == "VHS")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                         // Genero Comedia
                     }else if(escolha == 4){
-                        if(VHS.getListaDeComedia().isEmpty()){
-                            System.out.println("Não existe nenhum filme nesta categoria");
-                        }else{
-                            Menu.consultaNomeEQntComedia(VHS);
+                        for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                            if((Estoque.getListaFilmes().get(x).getGenero() == "Comedia") && (Estoque.getListaFilmes().get(x).getTipo() == "VHS")){
+                                Menu.consultaNomeEQnt(Estoque, x);
+                            }
                         }
                     }
                 }

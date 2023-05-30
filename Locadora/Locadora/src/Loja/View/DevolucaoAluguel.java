@@ -10,7 +10,7 @@ public class DevolucaoAluguel {
     
     static Scanner scannerInteiro = new Scanner(System.in);
 
-    public static void DevolucaoAluguelFunc(ControleDeAluguel cadastroClientes, int escolha, EstoqueLoja CDs, EstoqueLoja VHS, int quantidadeDevolucao){
+    public static void DevolucaoAluguelFunc(ControleDeAluguel cadastroClientes, int escolha, EstoqueLoja Estoque, int quantidadeDevolucao){
         
         if(cadastroClientes.getAlugueis().isEmpty()){
             System.out.println("NÃO É POSSIVEL EFETUAR DEVOLUÇÃO POIS NÃO EXISTE ALUGUEIS REGISTRADOS");
@@ -37,100 +37,100 @@ public class DevolucaoAluguel {
             //Falta devolver quantidade que cliente alugou para estoque (25/04/23)
             
             //CDs
-            if(cadastroClientes.getAlugueis().get(escolha).getTipo() == "CDs"){
+            if(cadastroClientes.getAlugueis().get(escolha).getTipo() == "CD"){
                 if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Terror"){
-                    for(int x = 0; x < CDs.getListaDeTerror().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == CDs.getListaDeTerror().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = CDs.getListaDeTerror().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            CDs.getListaDeTerror().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
 
                     
 
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Acao"){
-                    for(int x = 0; x < CDs.getListaDeAcao().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == CDs.getListaDeAcao().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = CDs.getListaDeAcao().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            CDs.getListaDeAcao().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
 
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Drama"){
-                    for(int x = 0; x < CDs.getListaDeDrama().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == CDs.getListaDeDrama().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = CDs.getListaDeDrama().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            CDs.getListaDeDrama().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
 
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Comedia"){
-                    for(int x = 0; x < CDs.getListaDeComedia().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == CDs.getListaDeComedia().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = CDs.getListaDeComedia().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            CDs.getListaDeComedia().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
                 }//VHS
             }else if(cadastroClientes.getAlugueis().get(escolha).getTipo() == "VHS"){
                 if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Terror"){
-                    for(int x = 0; x < VHS.getListaDeTerror().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == VHS.getListaDeTerror().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = VHS.getListaDeTerror().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            VHS.getListaDeComedia().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Acao"){
-                    for(int x = 0; x < VHS.getListaDeAcao().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == VHS.getListaDeAcao().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = VHS.getListaDeAcao().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            VHS.getListaDeAcao().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Drama"){
-                    for(int x = 0; x < VHS.getListaDeDrama().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == VHS.getListaDeDrama().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = VHS.getListaDeDrama().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            VHS.getListaDeDrama().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Comedia"){
-                    for(int x = 0; x < VHS.getListaDeComedia().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == VHS.getListaDeComedia().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                    for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
+                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
-                            quantidadeDevolucao = VHS.getListaDeComedia().get(x).getQnt();
+                            quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
 
 
-                            VHS.getListaDeComedia().get(x).setQntEstoque(quantidadeDevolucao);
+                            Estoque.getListaFilmes().get(x).setQntEstoque(quantidadeDevolucao);
                         }
                     }
                 }

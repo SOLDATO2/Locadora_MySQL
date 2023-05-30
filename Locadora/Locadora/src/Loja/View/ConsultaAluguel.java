@@ -5,8 +5,8 @@ import Loja.Modelos.ControleDeAluguel;
 import Loja.Modelos.EstoqueLoja;
 
 public class ConsultaAluguel {
-    public static void consultaAluguelFunc(EstoqueLoja CDs, EstoqueLoja VHS, ControleDeAluguel cadastroClientes){
-        if(Menu.listasEstaoVazias(CDs, VHS) == true){
+    public static void consultaAluguelFunc(EstoqueLoja Estoque, ControleDeAluguel cadastroClientes){
+        if(Menu.listaEstaVazia(Estoque) == true){
             System.out.println("Não é possivel registrar um aluguel pois não existe nenhum filme em estoque.");
         }else if(cadastroClientes.getAlugueis().isEmpty()){
             System.out.println("Não é possivel consultar um aluguel pois não existe nenhum cliente registrado.");
