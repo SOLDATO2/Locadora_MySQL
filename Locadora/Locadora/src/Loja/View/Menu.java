@@ -39,14 +39,15 @@ public class Menu {
                 System.out.println("[2] VHS");
                 escolha = scannerInteiro.nextInt();
                 if(escolha == 1){
+                    
 
-                    RegistroEstoque.registroEstoqueCD(escolha, Estoque, codigoProduto);
+                    RegistroEstoque.registroEstoque(escolha, Estoque, codigoProduto, "CD");
                     codigoProduto++;
 
                     //VHS
                 }else if(escolha == 2){
 
-                    RegistroEstoque.registroEstoqueVHS(escolha, Estoque, codigoProduto);
+                    RegistroEstoque.registroEstoque(escolha, Estoque, codigoProduto, "VHS");
                     codigoProduto++;
 
                 }

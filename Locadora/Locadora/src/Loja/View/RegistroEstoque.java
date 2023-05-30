@@ -1,9 +1,23 @@
 package Loja.View;
+import Loja.DAO.RegistroEstoqueDAO;
 import Loja.Modelos.EstoqueLoja;
 import Loja.Modelos.Filme;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+
 import java.util.Scanner;
 
+
+
+
 public class RegistroEstoque {
+
+
+
+    static EntityManagerFactory emf;
+    static EntityManager em;
+
+  
     
 
     // Este é um exemplo de sub menu que será implementado(apos terminar o trabalho) em Menu.java no lugar da primeira opção
@@ -21,7 +35,7 @@ public class RegistroEstoque {
     
     
 
-    public static void registroEstoqueCD(int escolha, EstoqueLoja Estoque, int codigoProduto) {
+    public static void registroEstoque(int escolha, EstoqueLoja Estoque, int codigoProduto, String tipo) {
                     System.out.println("QUAL GENERO?");
                     System.out.println("[1] TERROR");
                     System.out.println("[2] ACAO");
@@ -30,61 +44,40 @@ public class RegistroEstoque {
                     escolha = scannerInteiro.nextInt();
                     if(escolha == 1){ // Adiciona Terror
                         
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Terror", "CD"));
+                        Estoque.addLista(registro(codigoProduto, Estoque, "Terror", tipo));
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }else if(escolha == 2){ // Adiciona Acao
                         
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Acao", "CD"));
+                        Estoque.addLista(registro(codigoProduto, Estoque, "Acao", tipo));
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }else if(escolha == 3){ // Adiciona Drama
                         
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Drama", "CD"));
+                        Estoque.addLista(registro(codigoProduto, Estoque, "Drama", tipo));
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }else if(escolha == 4){ // Adiciona Comedia
                 
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Comedia", "CD"));
+                        Estoque.addLista(registro(codigoProduto, Estoque, "Comedia", tipo));
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }
         
                 }
 
 
-    public static void registroEstoqueVHS(int escolha, EstoqueLoja Estoque, int codigoProduto) {
-        System.out.println("QUAL GENERO?");
-        System.out.println("[1] TERROR");
-        System.out.println("[2] ACAO");
-        System.out.println("[3] DRAMA");
-        System.out.println("[4] COMEDIA");
-        escolha = scannerInteiro.nextInt();
-            if(escolha == 1){ // Adiciona Terror
-                        
-                Estoque.addLista(registro(codigoProduto, Estoque, "Terror", "VHS"));
-                System.out.println("ADICIONADO COM SUCESSO!");
-            }else if(escolha == 2){ // Adiciona Acao
-                        
-                Estoque.addLista(registro(codigoProduto, Estoque, "Acao", "VHS"));
-                System.out.println("ADICIONADO COM SUCESSO!");
-            }else if(escolha == 3){ // Adiciona Drama
-                        
-                Estoque.addLista(registro(codigoProduto, Estoque, "Drama", "VHS"));
-                System.out.println("ADICIONADO COM SUCESSO!");
-            }else if(escolha == 4){ // Adiciona Comedia
-                
-                Estoque.addLista(registro(codigoProduto, Estoque, "Comedia", "VHS"));
-                System.out.println("ADICIONADO COM SUCESSO!");
-            }
-        
-    }
 
     static Filme registro(int codigoProduto, EstoqueLoja tipoEstoque, String genero, String tipo){
+
+        
         System.out.println("QUAL É O NOME DO FILME?");
         nome = scannerString.nextLine();
         System.out.println("QUAL É A QUANTIDADADE?");
         quantidade = scannerInteiro.nextInt();
         Filme filme = new Filme(nome, quantidade, codigoProduto, genero, tipo);
+        RegistroEstoqueDAO regDAO = new RegistroEstoqueDAO(filme);
         return filme;
 
     }
+
+    
 }
 
     

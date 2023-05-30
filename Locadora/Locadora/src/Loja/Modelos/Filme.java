@@ -1,17 +1,31 @@
 package Loja.Modelos;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "filmes")
 public class Filme {
 
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    private long id;
     private String nome;
     private int quantidade;
     private int codigoProduto;
     private String genero;
     private String tipo;
     
-
+    
+    public Filme(){
+        
+    }
 
 
     //constructor
@@ -29,6 +43,18 @@ public class Filme {
     public String getNome() {
         return nome;
     }
+
+    
+
+    public long getId() {
+        return id;
+    }
+
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
 
     public int getQnt(){
         return quantidade;
