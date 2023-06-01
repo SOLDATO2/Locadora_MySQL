@@ -11,7 +11,7 @@ public class Menu {
         EstoqueLoja Estoque = new EstoqueLoja();
 
         ControleDeAluguel cadastroClientes = new ControleDeAluguel();
-        List<Funcionario> listaFuncionarios = new ArrayList<>(); // seria necessario exigir a criação de um funcionario antes usar o programa caso esse lista tivesse dentro da classe Funcionario.java
+     
 
         int quantidadeDevolucao = 0; // variavel que sera usada para devolver qnt alugada para o estoque 
         int escolha, codigoProduto = 100; // escolha menu e codigo que sera distribuido para cada produto 
@@ -55,11 +55,11 @@ public class Menu {
                 ConsultaEstoque.consultaEstoqueFunc(escolha, Estoque);
             }else if(escolha == 3){
 
-                RegistroFuncionario.registroFuncionarioFunc(listaFuncionarios);
+                RegistroFuncionario.registroFuncionarioFunc();
 
             }else if(escolha == 4){
                 
-                ConsultaFuncionario.consultaFuncionarioFunc(listaFuncionarios);
+                //ConsultaFuncionario.consultaFuncionarioFunc();
 
             }else if(escolha == 5){ // REGISTRO DE CLIENTE ( EFETUAR ALUGUEL)
                 if(listaEstaVazia(Estoque)== true){ // verifica se existe estoque para registrar clientes

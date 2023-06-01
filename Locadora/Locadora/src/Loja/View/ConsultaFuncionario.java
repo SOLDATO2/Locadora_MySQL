@@ -4,7 +4,7 @@ import java.util.List;
 
 import Loja.Modelos.Funcionario;
 
-public class ConsultaFuncionario {
+public class ConsultaFuncionario { // falta gerar consulta funcionario DAO
     public static void consultaFuncionarioFunc(List<Funcionario> listaFuncionariosTemp){
         if(listaFuncionariosTemp.isEmpty()){
                     

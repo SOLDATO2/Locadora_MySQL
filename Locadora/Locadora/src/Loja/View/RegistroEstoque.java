@@ -2,8 +2,6 @@ package Loja.View;
 import Loja.DAO.RegistroEstoqueDAO;
 import Loja.Modelos.EstoqueLoja;
 import Loja.Modelos.Filme;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 
 import java.util.Scanner;
 
@@ -14,8 +12,6 @@ public class RegistroEstoque {
 
 
 
-    static EntityManagerFactory emf;
-    static EntityManager em;
 
   
     

@@ -1,8 +1,20 @@
 package Loja.Modelos;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "funcionarios")
 public class Funcionario extends Pessoa{
 
+    
+
+    
     private String cargo;
+
+    public Funcionario(){
+
+    }
 
     
     //Constructor
@@ -15,6 +27,7 @@ public class Funcionario extends Pessoa{
     public String getCargo() {
         return cargo;
     }
+
 
 
 
