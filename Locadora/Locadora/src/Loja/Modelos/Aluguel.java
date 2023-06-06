@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "alugueis")
 public class Aluguel{
 
     private LocalDate dataLocacao = LocalDate.now();

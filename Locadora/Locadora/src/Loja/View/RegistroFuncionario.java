@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 import Loja.Modelos.Funcionario;
 
-import java.util.List;
-
 import Loja.DAO.RegistroFuncionarioDAO;
 
 public class RegistroFuncionario {

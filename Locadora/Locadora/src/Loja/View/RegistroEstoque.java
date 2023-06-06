@@ -1,6 +1,5 @@
 package Loja.View;
 import Loja.DAO.RegistroEstoqueDAO;
-import Loja.Modelos.EstoqueLoja;
 import Loja.Modelos.Filme;
 
 import java.util.Scanner;
@@ -31,7 +30,7 @@ public class RegistroEstoque {
     
     
 
-    public static void registroEstoque(int escolha, EstoqueLoja Estoque, int codigoProduto, String tipo) {
+    public static void registroEstoque(int escolha, int codigoProduto, String tipo) {
                     System.out.println("QUAL GENERO?");
                     System.out.println("[1] TERROR");
                     System.out.println("[2] ACAO");
@@ -40,19 +39,19 @@ public class RegistroEstoque {
                     escolha = scannerInteiro.nextInt();
                     if(escolha == 1){ // Adiciona Terror
                         
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Terror", tipo));
+                        registro(codigoProduto,"Terror", tipo);
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }else if(escolha == 2){ // Adiciona Acao
                         
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Acao", tipo));
+                        registro(codigoProduto, "Acao", tipo);
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }else if(escolha == 3){ // Adiciona Drama
                         
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Drama", tipo));
+                        registro(codigoProduto,"Drama", tipo);
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }else if(escolha == 4){ // Adiciona Comedia
                 
-                        Estoque.addLista(registro(codigoProduto, Estoque, "Comedia", tipo));
+                        registro(codigoProduto,"Comedia", tipo);
                         System.out.println("ADICIONADO COM SUCESSO!");
                     }
         
@@ -60,7 +59,7 @@ public class RegistroEstoque {
 
 
 
-    static Filme registro(int codigoProduto, EstoqueLoja tipoEstoque, String genero, String tipo){
+    static void registro(int codigoProduto, String genero, String tipo){
 
         
         System.out.println("QUAL É O NOME DO FILME?");
@@ -69,7 +68,6 @@ public class RegistroEstoque {
         quantidade = scannerInteiro.nextInt();
         Filme filme = new Filme(nome, quantidade, codigoProduto, genero, tipo);
         RegistroEstoqueDAO regDAO = new RegistroEstoqueDAO(filme);
-        return filme;
 
     }
 

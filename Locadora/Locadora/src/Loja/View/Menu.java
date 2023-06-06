@@ -1,7 +1,5 @@
 package Loja.View;
 import java.util.Scanner;
-import java.util.List;
-import java.util.ArrayList;
 
 
 import Loja.Modelos.*;
@@ -41,13 +39,13 @@ public class Menu {
                 if(escolha == 1){
                     
 
-                    RegistroEstoque.registroEstoque(escolha, Estoque, codigoProduto, "CD");
+                    RegistroEstoque.registroEstoque(escolha, codigoProduto, "CD");
                     codigoProduto++;
 
                     //VHS
                 }else if(escolha == 2){
 
-                    RegistroEstoque.registroEstoque(escolha, Estoque, codigoProduto, "VHS");
+                    RegistroEstoque.registroEstoque(escolha, codigoProduto, "VHS");
                     codigoProduto++;
 
                 }
@@ -59,7 +57,7 @@ public class Menu {
 
             }else if(escolha == 4){
                 
-                //ConsultaFuncionario.consultaFuncionarioFunc();
+                ConsultaFuncionario.consultaFuncionarioFunc();
 
             }else if(escolha == 5){ // REGISTRO DE CLIENTE ( EFETUAR ALUGUEL)
                 if(listaEstaVazia(Estoque)== true){ // verifica se existe estoque para registrar clientes
