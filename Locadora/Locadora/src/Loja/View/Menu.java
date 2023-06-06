@@ -60,13 +60,11 @@ public class Menu {
                 ConsultaFuncionario.consultaFuncionarioFunc();
 
             }else if(escolha == 5){ // REGISTRO DE CLIENTE ( EFETUAR ALUGUEL)
-                if(listaEstaVazia(Estoque)== true){ // verifica se existe estoque para registrar clientes
-                    System.out.println("NÃO É POSSIVEL REGISTRAR CLIENTES POIS NÃO EXISTE FILMES EM ESTOQUE");
-                }else{
+                
 
-                    RegistroCliente.registroClienteFunc(Estoque, escolha, cadastroClientes);
+                RegistroCliente.registroClienteFunc(Estoque, escolha, cadastroClientes);
 
-                }
+
                      
             }else if(escolha == 6){// CONSULTA DE ALUGUEIS
                 

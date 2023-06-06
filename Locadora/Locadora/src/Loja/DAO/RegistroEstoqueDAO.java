@@ -7,14 +7,16 @@ import jakarta.persistence.Persistence;
 
 public class RegistroEstoqueDAO {
     
-
+    EntityManagerFactory emf;
+    EntityManager em;
 
     //Constructor
-    public RegistroEstoqueDAO(Filme filme){
+    public RegistroEstoqueDAO(){
+        emf = Persistence.createEntityManagerFactory("exemplo_MySQL");
+        em = emf.createEntityManager();
+    }
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo_MySQL");
-        EntityManager em = emf.createEntityManager();
-
+    public  void salvarFilme(Filme filme){
         em.getTransaction().begin();
         em.persist(filme);
         em.getTransaction().commit();

@@ -9,13 +9,11 @@ import jakarta.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-
 public class Pessoa {
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private long id;
+    private int id;
     private String nomePessoa;
     private String cpfPessoa;
 
@@ -29,19 +27,34 @@ public class Pessoa {
         this.nomePessoa = nomePessoa;
         this.cpfPessoa = cpfPessoa;
     }
-    
-    //getters
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNomePessoa() {
         return nomePessoa;
+    }
+
+    public void setNomePessoa(String nomePessoa) {
+        this.nomePessoa = nomePessoa;
     }
 
     public String getCpfPessoa() {
         return cpfPessoa;
     }
 
-    public long getId(){
-        return id;
+    public void setCpfPessoa(String cpfPessoa) {
+        this.cpfPessoa = cpfPessoa;
     }
+    
+    //getters
+
+    
 
     
 }

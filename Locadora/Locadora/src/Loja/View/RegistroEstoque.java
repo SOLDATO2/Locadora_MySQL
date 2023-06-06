@@ -67,7 +67,9 @@ public class RegistroEstoque {
         System.out.println("QUAL É A QUANTIDADADE?");
         quantidade = scannerInteiro.nextInt();
         Filme filme = new Filme(nome, quantidade, codigoProduto, genero, tipo);
-        RegistroEstoqueDAO regDAO = new RegistroEstoqueDAO(filme);
+        RegistroEstoqueDAO regDAO = new RegistroEstoqueDAO();
+        regDAO.salvarFilme(filme);
+        //filme
 
     }
 

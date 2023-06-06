@@ -8,8 +8,7 @@ import jakarta.persistence.Table;
 @Table(name = "clientes")
 public class Cliente extends Pessoa{
 
-
-
+    
     String numeroCeluar;
 
     public Cliente(){
@@ -21,14 +20,14 @@ public class Cliente extends Pessoa{
         this.numeroCeluar = numeroCelular;
     }
 
-
     public String getNumeroCeluar() {
         return numeroCeluar;
     }
 
-    
-    
-    
+    public void setNumeroCeluar(String numeroCeluar) {
+        this.numeroCeluar = numeroCeluar;
+    }
+
     
     
 }

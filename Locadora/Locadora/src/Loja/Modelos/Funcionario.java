@@ -8,8 +8,6 @@ import jakarta.persistence.Table;
 public class Funcionario extends Pessoa{
 
     
-
-    
     private String cargo;
 
     public Funcionario(){
@@ -23,14 +21,17 @@ public class Funcionario extends Pessoa{
         this.cargo = cargoFuncionario;
     }
 
-    //Getters
+
     public String getCargo() {
         return cargo;
     }
 
 
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
 
-
+    //Getters
 
 
     

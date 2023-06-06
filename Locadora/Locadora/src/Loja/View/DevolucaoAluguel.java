@@ -20,12 +20,12 @@ public class DevolucaoAluguel {
             for (Aluguel item : cadastroClientes.getAlugueis()){ // esse é um for mais complexo (for each), daria pra fazer com for simples tmb.
                 System.out.println("----------------------------------------------------------");
                 System.out.println("["+contador+"]");
-                System.out.println("Nome cliente: " + item.getCliente().getNomePessoa());
-                System.out.println("CPF: " + item.getCliente().getCpfPessoa());
-                System.out.println("Numero de Celular: "+ item.getCliente().getNumeroCeluar());
+                System.out.println("Nome cliente: " + item.getClienteLocador().getNomePessoa());
+                System.out.println("CPF: " + item.getClienteLocador().getCpfPessoa());
+                System.out.println("Numero de Celular: "+ item.getClienteLocador().getNumeroCeluar());
                 //Adicionar for para nome do filme e qntd
                 System.out.println("Nome do filme alugado: " + item.getNomeFilme()+" qtd:" + item.getQuantidadeAlugado());
-                System.out.println("Codigo do produto alugado: " + item.getCodigoProdutoAluguel());
+                System.out.println("Codigo do produto alugado: " + item.getIdFilmeBD());
                 System.out.println("Data do aluguel: " + item.getDataFormatada());
                 System.out.println("Data de devolucao: " + item.getDataDevolucaoFormatada());
                 System.out.println("----------------------------------------------------------");
@@ -40,7 +40,7 @@ public class DevolucaoAluguel {
             if(cadastroClientes.getAlugueis().get(escolha).getTipo() == "CD"){
                 if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Terror"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -54,7 +54,7 @@ public class DevolucaoAluguel {
 
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Acao"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -66,7 +66,7 @@ public class DevolucaoAluguel {
 
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Drama"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -78,7 +78,7 @@ public class DevolucaoAluguel {
 
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Comedia"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -91,7 +91,7 @@ public class DevolucaoAluguel {
             }else if(cadastroClientes.getAlugueis().get(escolha).getTipo() == "VHS"){
                 if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Terror"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -102,7 +102,7 @@ public class DevolucaoAluguel {
                     }
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Acao"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -113,7 +113,7 @@ public class DevolucaoAluguel {
                     }
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Drama"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();
@@ -124,7 +124,7 @@ public class DevolucaoAluguel {
                     }
                 }else if(cadastroClientes.getAlugueis().get(escolha).getGenero() == "Comedia"){
                     for(int x = 0; x < Estoque.getListaFilmes().size(); x++){
-                        if(cadastroClientes.getAlugueis().get(escolha).getCodigoProdutoAluguel() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
+                        if(cadastroClientes.getAlugueis().get(escolha).getIdFilmeBD() == Estoque.getListaFilmes().get(x).getCodigoProduto()){ // compara o codigo de produto que o cliente alugou com o codigo que tem em estoque
                             quantidadeDevolucao = 0;
                             quantidadeDevolucao = Estoque.getListaFilmes().get(x).getQnt();
                             quantidadeDevolucao += cadastroClientes.getAlugueis().get(escolha).getQuantidadeAlugado();

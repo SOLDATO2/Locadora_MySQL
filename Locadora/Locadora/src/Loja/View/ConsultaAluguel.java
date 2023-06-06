@@ -17,12 +17,12 @@ public class ConsultaAluguel {
                 System.out.println("CONSULTA DE ALUGUEIS");
             for (Aluguel item  : cadastroClientes.getAlugueis()){ // esse é um for mais complexo (for each), daria pra fazer com for simples tmb.
                 System.out.println("----------------------------------------------------------");
-                System.out.println("Nome cliente: " + item.getCliente().getNomePessoa());
-                System.out.println("CPF: " + item.getCliente().getCpfPessoa());
-                System.out.println("Numero de Celular: "+ item.getCliente().getNumeroCeluar());
+                System.out.println("Nome cliente: " + item.getClienteLocador().getNomePessoa());
+                System.out.println("CPF: " + item.getClienteLocador().getCpfPessoa());
+                System.out.println("Numero de Celular: "+ item.getClienteLocador().getNumeroCeluar());
                 //Adicionar for para nome do filme e qntd
                 System.out.println("Nome do filme alugado: " + item.getNomeFilme()+" qtd:" + item.getQuantidadeAlugado());
-                System.out.println("Codigo do produto alugado: " + item.getCodigoProdutoAluguel());
+                System.out.println("Codigo do produto alugado: " + item.getIdFilmeBD());
                 System.out.println("Data do aluguel: " + item.getDataFormatada());
                 System.out.println("Data de devolucao: " + item.getDataDevolucaoFormatada());
                 System.out.println("----------------------------------------------------------");
