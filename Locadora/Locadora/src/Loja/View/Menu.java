@@ -27,7 +27,7 @@ public class Menu {
             System.out.println("[5] REGISTRAR UM ALUGUEL");
             System.out.println("[6] CONSULTAR ALUGUEIS");
             System.out.println("[7] REMOVER ALUGUEL");
-            System.out.println("[0] SAIR E APAGAR LOJA");
+            System.out.println("[0] SAIR");
             escolha = scannerInteiro.nextInt();
             // CDs
             if(escolha == 1){
@@ -68,7 +68,7 @@ public class Menu {
                      
             }else if(escolha == 6){// CONSULTA DE ALUGUEIS
                 
-                ConsultaAluguel.consultaAluguelFunc(Estoque, cadastroClientes);
+                ConsultaAluguel.consultaAluguelFunc();
 
             }else if(escolha == 7){ // Apagar Clientes
 
@@ -95,23 +95,8 @@ public class Menu {
         System.out.println("[4] COMEDIA");
     }
 
-    public static void consultaNomeEQnt(EstoqueLoja qualEstoque, int x){
-            System.out.println("----------------------------------------------------------");
-            System.out.println("Nome do filme: " + qualEstoque.getListaFilmes().get(x).getNome());
-            System.out.println("Quantidade: " + qualEstoque.getListaFilmes().get(x).getQnt());
-            System.out.println("Codigo do produto: " + qualEstoque.getListaFilmes().get(x).getCodigoProduto());
-            System.out.println("----------------------------------------------------------");
-    }
+   
 
 
-    public static Boolean listaEstaVazia(EstoqueLoja x){
-
-        if(x.getListaFilmes().isEmpty()){
-            return true;
-        }else{
-            return false;
-        }
-        
-    }
-
+    
 }

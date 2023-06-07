@@ -13,7 +13,7 @@ public class ConsultaEstoque {
 
 
     static Scanner scannerInteiro = new Scanner(System.in);
-    public static void consultaEstoqueFunc(int escolha, EstoqueLoja Estoque){
+    public static void consultaEstoqueFunc(int escolha, EstoqueLoja estoque){
                 
 
                 System.out.println("QUAL ESTOQUE GOSTARIA DE CONSULTAR?");

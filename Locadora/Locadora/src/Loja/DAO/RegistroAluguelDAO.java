@@ -1,23 +1,23 @@
 package Loja.DAO;
 
-import Loja.Modelos.Cliente;
+import Loja.Modelos.Aluguel;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-public class RegistroClienteDAO {
+public class RegistroAluguelDAO {
     EntityManagerFactory emf;
     EntityManager em;
 
-    public RegistroClienteDAO(){
+    public RegistroAluguelDAO(){
         emf = Persistence.createEntityManagerFactory("exemplo_MySQL");
         em = emf.createEntityManager();
     }
 
 
-    public void salvarCliente(Cliente cliente){
+    public void salvarAluguel(Aluguel aluguel){
         em.getTransaction().begin();
-        em.persist(cliente);
+        em.persist(aluguel);
         em.getTransaction().commit();
 
         em.close();

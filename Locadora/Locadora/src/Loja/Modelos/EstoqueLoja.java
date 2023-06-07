@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 //ESSA CLASSE PODE DEIXAR DE EXISTER AO TRANSITAR PARA O BD
 
+// precisa criar a devolucaoDAO e implementar em DevolucaoAluguel para retirar essa class completamente
+
 public class EstoqueLoja {
 
 

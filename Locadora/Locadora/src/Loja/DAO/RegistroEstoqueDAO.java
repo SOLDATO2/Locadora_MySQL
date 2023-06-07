@@ -16,7 +16,7 @@ public class RegistroEstoqueDAO {
         em = emf.createEntityManager();
     }
 
-    public  void salvarFilme(Filme filme){
+    public void salvarFilme(Filme filme){
         em.getTransaction().begin();
         em.persist(filme);
         em.getTransaction().commit();
